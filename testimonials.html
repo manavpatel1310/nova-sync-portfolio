@@ -6,25 +6,439 @@
     <title>NOVA SYNC | Testimonials</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" type="image/png" href="images/Logo Design for Nova Sync - Celestial Theme.jpg">
+    <style>
+      
+      
+       
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary: #475569;
+            --light: #f1f5f9;
+            --dark: #0f172a;
+            --success: #10b981;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--white);
+            padding-top: 80px;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+            position: relative;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            text-decoration: none;
+        }
+
+        .logo-img {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            object-fit: cover;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin-left: 2rem;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: var(--primary);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.8rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--dark);
+            z-index: 1001;
+            padding: 0.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .mobile-menu-btn:hover {
+            color: var(--primary);
+        }
+
+        .mobile-nav {
+            position: fixed;
+            top: 80px;
+            left: 0;
+            width: 100%;
+            background-color: var(--white);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+            z-index: 999;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-in-out;
+        }
+
+        .mobile-nav.active {
+            max-height: 500px;
+        }
+
+        .mobile-nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            flex-direction: column;
+        }
+
+        .mobile-nav ul li {
+            margin: 0;
+            border-bottom: 1px solid var(--light);
+        }
+
+        .mobile-nav ul li:last-child {
+            border-bottom: none;
+        }
+
+        .mobile-nav ul li a {
+            display: block;
+            padding: 1.2rem 2rem;
+            color: var(--dark);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+        }
+
+        .mobile-nav ul li a:hover {
+            background-color: var(--light);
+            color: var(--primary);
+            padding-left: 2.5rem;
+        }
+
+        /* Demo content */
+        .demo-content {
+            padding: 2rem 0;
+            min-height: 80vh;
+        }
+
+        .demo-section {
+            margin: 4rem 0;
+            padding: 2rem;
+            background-color: var(--light);
+            border-radius: 8px;
+        }
+
+        /* Mobile Responsive Styles */
+        @media (max-width: 768px) {
+            body {
+                padding-top: 70px;
+            }
+
+            .container {
+                width: 95%;
+            }
+
+            .header-container {
+                padding: 0.8rem 0;
+            }
+
+            .logo {
+                font-size: 1.3rem;
+            }
+
+            .logo-img {
+                width: 35px;
+                height: 35px;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            nav {
+                display: none;
+            }
+
+            .mobile-nav {
+                top: 70px;
+            }
+        }
+    
+        /* Enhanced Testimonial Slider Styles */
+        .testimonials {
+            padding-top: 8rem;
+            background-color: var(--light);
+        }
+
+        .testimonial-slider {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .testimonial-slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            width: 100%;
+        }
+
+        .testimonial-slide {
+            min-width: 100%;
+            padding: 3rem 2rem;
+            background: linear-gradient(135deg, var(--white) 0%, var(--light) 100%);
+            text-align: center;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .client-quote {
+            font-style: italic;
+            margin-bottom: 2rem;
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: var(--dark);
+            position: relative;
+            max-width: 700px;
+        }
+
+        .client-quote::before {
+            content: '"';
+            font-size: 4rem;
+            color: var(--primary);
+            position: absolute;
+            top: -1rem;
+            left: -2rem;
+            font-family: serif;
+        }
+
+        .client-info {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .client-img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 4px solid var(--primary);
+        }
+
+        .client-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .client-name {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--dark);
+            margin-bottom: 0.3rem;
+        }
+
+        .client-position {
+            color: var(--secondary);
+            font-size: 0.9rem;
+        }
+
+        .testimonial-nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .slider-btn {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: var(--primary);
+            color: var(--white);
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1.2rem;
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+        }
+
+        .slider-btn:hover {
+            background-color: var(--primary-dark);
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+        }
+
+        .slider-dots {
+            display: flex;
+            justify-content: center;
+            gap: 0.8rem;
+            margin-top: 1.5rem;
+        }
+
+        .slider-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: rgba(37, 99, 235, 0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .slider-dot.active {
+            background-color: var(--primary);
+            transform: scale(1.3);
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .testimonials {
+                padding-top: 6rem;
+            }
+
+            .testimonial-slide {
+                padding: 2rem 1.5rem;
+            }
+
+            .client-quote {
+                font-size: 1.1rem;
+            }
+
+            .client-quote::before {
+                font-size: 3rem;
+                top: -0.5rem;
+                left: -1.5rem;
+            }
+
+            .client-info {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+
+            .client-img {
+                width: 60px;
+                height: 60px;
+            }
+
+            .slider-btn {
+                width: 50px;
+                height: 50px;
+                font-size: 1rem;
+            }
+
+            .testimonial-nav {
+                gap: 1.5rem;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Header -->
-    <header>
-        <div class="container header-container">
-            <a href="index.html" class="logo">NOVA SYNC</a>
-            <button class="mobile-menu-btn">
-                <i class="fas fa-bars"></i>
-            </button>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="portfolio.html">Our Projects</a></li>
-                    <li><a href="testimonials.html">Testimonials</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
+        <header>
+        <div class="container">
+            <div class="header-container">
+                <a href="#" class="logo-container">
+                    <img src="images/Logo Design for Nova Sync - Celestial Theme.jpg" alt="Logo" class="logo-img">
+             <span class="logo">Nova Sync</span>
+                </a>
+                
+                <!-- Desktop Navigation -->
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="testimonials.html">Testimonials</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+                
+                <!-- Mobile Menu Button -->
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    ☰
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Navigation -->
+        <div class="mobile-nav" id="mobileNav">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="testimonials.html">Testimonials</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
         </div>
     </header>
 
@@ -33,12 +447,13 @@
         <div class="container text-center">
             <h2 class="section-title">What Our Clients Say</h2>
             <div class="testimonial-slider">
-                <div class="testimonial-slides">
+                <div class="testimonial-slides" id="testimonialSlides">
+                    <!-- Slide 1 -->
                     <div class="testimonial-slide">
-                        <p class="client-quote">"NOVA SYNC transformed our outdated website into a modern, high-converting platform. Their team was professional, responsive, and delivered exactly what we needed, ahead of schedule. The results have been outstanding with a 40% increase in online inquiries."</p>
+                        <p class="client-quote">NOVA SYNC transformed our outdated website into a modern, high-converting platform. Their team was professional, responsive, and delivered exactly what we needed, ahead of schedule. The results have been outstanding with a 40% increase in online inquiries.</p>
                         <div class="client-info">
                             <div class="client-img">
-                                <img src="images/dummy-customer.png" alt="Client">
+                                <img src="images/dummy-customer.png" alt="Sarah Johnson">
                             </div>
                             <div>
                                 <div class="client-name">Sarah Johnson</div>
@@ -46,11 +461,13 @@
                             </div>
                         </div>
                     </div>
+                    
+                    <!-- Slide 2 -->
                     <div class="testimonial-slide">
-                        <p class="client-quote">"Working with NOVA SYNC on our mobile app was a game-changer for our business. Their attention to detail and focus on user experience resulted in an app that our customers love. Downloads have exceeded our expectations, and user engagement is through the roof."</p>
+                        <p class="client-quote">Working with NOVA SYNC on our mobile app was a game-changer for our business. Their attention to detail and focus on user experience resulted in an app that our customers love. Downloads have exceeded our expectations, and user engagement is through the roof.</p>
                         <div class="client-info">
                             <div class="client-img">
-                                <img src="images/dummy-customer.png" alt="Client">
+                                <img src="images/dummy-customer.png" alt="Michael Rodriguez">
                             </div>
                             <div>
                                 <div class="client-name">Michael Rodriguez</div>
@@ -58,30 +475,36 @@
                             </div>
                         </div>
                     </div>
-                    <!-- <div class="testimonial-slide">
-                        <p class="client-quote">"The team at NOVA SYNC provided exceptional service from start to finish. They took the time to understand our unique challenges and delivered a custom software solution that has streamlined our operations and saved us countless hours of manual work."</p>
+                    
+                    <!-- Slide 3 -->
+                    <div class="testimonial-slide">
+                        <p class="client-quote">The IAM solution provided by NOVA SYNC has revolutionized our security infrastructure. Their expertise in identity management and access control has made our systems more secure while improving user experience. Highly recommended for enterprise solutions.</p>
                         <div class="client-info">
                             <div class="client-img">
-                                <img src="/api/placeholder/60/60" alt="Client">
+                                <img src="images/dummy-customer.png" alt="Jennifer Chen">
                             </div>
                             <div>
-                                <div class="client-name">Emily Chen</div>
-                                <div class="client-position">Operations Manager, GlobalLogistics</div>
+                                <div class="client-name">Jennifer Chen</div>
+                                <div class="client-position">CTO, SecureBank</div>
                             </div>
                         </div>
-                    </div> -->
+                    </div>
                 </div>
+                
                 <div class="testimonial-nav">
-                    <button class="slider-btn prev-btn">
-                        <i class="fas fa-arrow-left"></i>
-                    </button>
-                    <button class="slider-btn next-btn">
-                        <i class="fas fa-arrow-right"></i>
-                    </button>
+                    <button class="slider-btn prev-btn" id="prevBtn">‹</button>
+                    <div class="slider-dots" id="sliderDots">
+                        <span class="slider-dot active" data-slide="0"></span>
+                        <span class="slider-dot" data-slide="1"></span>
+                        <span class="slider-dot" data-slide="2"></span>
+                    </div>
+                    <button class="slider-btn next-btn" id="nextBtn">›</button>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Footer -->
 
     <footer>
         <div class="container">
@@ -116,22 +539,134 @@
                         <li><a href="services.html">Cloud Solutions</a></li>
                     </ul>
                 </div>
-                <!-- <div class="newsletter">
-                    <h4>Newsletter</h4>
-                    <p>Subscribe to our newsletter for the latest updates and insights.</p>
-                    <div class="newsletter-form">
-                        <input type="email" placeholder="Your Email">
-                        <button type="submit">Subscribe</button>
-                    </div>
-                </div>
-            </div> -->
+
             <div class="footer-bottom">
                 <p>&copy; 2025 NOVA SYNC. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
-    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js"></script>
     
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Mobile Menu Toggle Functionality
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const mobileNav = document.getElementById('mobileNav');
+            
+            if (mobileMenuBtn && mobileNav) {
+                mobileMenuBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    
+                    mobileNav.classList.toggle('active');
+                    
+                    // Change hamburger icon to X and back
+                    if (mobileNav.classList.contains('active')) {
+                        mobileMenuBtn.innerHTML = '✕';
+                    } else {
+                        mobileMenuBtn.innerHTML = '☰';
+                    }
+                });
+
+                // Close mobile menu when clicking on navigation links
+                const mobileNavLinks = mobileNav.querySelectorAll('a');
+                mobileNavLinks.forEach(function(link) {
+                    link.addEventListener('click', function() {
+                        mobileNav.classList.remove('active');
+                        mobileMenuBtn.innerHTML = '☰';
+                    });
+                });
+
+                // Close mobile menu when clicking outside
+                document.addEventListener('click', function(e) {
+                    if (!mobileMenuBtn.contains(e.target) && !mobileNav.contains(e.target)) {
+                        mobileNav.classList.remove('active');
+                        mobileMenuBtn.innerHTML = '☰';
+                    }
+                });
+
+                // Close mobile menu on window resize
+                window.addEventListener('resize', function() {
+                    if (window.innerWidth > 768) {
+                        mobileNav.classList.remove('active');
+                        mobileMenuBtn.innerHTML = '☰';
+                    }
+                });
+            }
+
+            // Testimonial Slider Functionality
+            const slides = document.getElementById('testimonialSlides');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            const dots = document.querySelectorAll('.slider-dot');
+            let currentSlide = 0;
+            const totalSlides = document.querySelectorAll('.testimonial-slide').length;
+
+            function updateSlider() {
+                // Move slides
+                slides.style.transform = `translateX(-${currentSlide * 100}%)`;
+                
+                // Update dots
+                dots.forEach((dot, index) => {
+                    dot.classList.toggle('active', index === currentSlide);
+                });
+            }
+
+            function nextSlide() {
+                currentSlide = (currentSlide + 1) % totalSlides;
+                updateSlider();
+            }
+
+            function prevSlide() {
+                currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+                updateSlider();
+            }
+
+            // Event listeners for buttons
+            nextBtn.addEventListener('click', nextSlide);
+            prevBtn.addEventListener('click', prevSlide);
+
+            // Event listeners for dots
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    currentSlide = index;
+                    updateSlider();
+                });
+            });
+
+            // Auto-play slider (optional)
+            setInterval(nextSlide, 5000); // Change slide every 5 seconds
+
+            // Touch/swipe functionality for mobile
+            let startX = 0;
+            let endX = 0;
+
+            slides.addEventListener('touchstart', (e) => {
+                startX = e.touches[0].clientX;
+            });
+
+            slides.addEventListener('touchend', (e) => {
+                endX = e.changedTouches[0].clientX;
+                handleSwipe();
+            });
+
+            function handleSwipe() {
+                const swipeThreshold = 50;
+                const diff = startX - endX;
+
+                if (Math.abs(diff) > swipeThreshold) {
+                    if (diff > 0) {
+                        nextSlide(); // Swipe left - next slide
+                    } else {
+                        prevSlide(); // Swipe right - previous slide
+                    }
+                }
+            }
+
+            // Initialize slider
+            updateSlider();
+        });
+    </script>
 </body>
 </html>
