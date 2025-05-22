@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NOVA SYNC | Portfolio</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" type="image/png" href="images/Logo Design for Nova Sync - Celestial Theme.jpg">
+  <style>
+    .portfolio-img {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+    }
+
+    .portfolio-img img {
+      width: 100%;
+      display: none;
+      object-fit: cover;
+      cursor: pointer;
+      transition: opacity 0.3s ease-in-out;
+    }
+
+    .portfolio-img img.active {
+      display: block;
+    }
+
+    .nav-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0, 0, 0, 0.5);
+      color: white;
+      border: none;
+      font-size: 2rem;
+      padding: 0.4rem 0.8rem;
+      cursor: pointer;
+      z-index: 2;
+      border-radius: 6px;
+    }
+
+    .nav-arrow.left {
+      left: 10px;
+    }
+
+    .nav-arrow.right {
+      right: 10px;
+    }
+
+    .portfolio-grid {
+      display: grid;
+      gap: 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      margin-top: 2rem;
+    }
+
+    .portfolio-item {
+      background: #fff;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+
+    .portfolio-content h3 {
+      margin-top: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .portfolio-category {
+      color: #007bff;
+      font-weight: bold;
+      font-size: 0.95rem;
+    }
+
+    /* Lightbox */
+    .lightbox {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.85);
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
+    }
+
+    .lightbox.show {
+      display: flex;
+    }
+
+    .lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+      border: 4px solid white;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="container header-container">
+      <a href="index.html" class="logo">NOVA SYNC</a>
+      <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="portfolio.html">Our Projects</a></li>
+          <li><a href="testimonials.html">Testimonials</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Portfolio Section -->
+  <section class="portfolio">
+    <div class="container text-center">
+      <h2 class="section-title">Our Projects</h2>
+      <div class="portfolio-grid">
+
+        <!-- Project 1 -->
+        <div class="portfolio-item" data-category="web">
+          <div class="portfolio-img">
+            <button class="nav-arrow left">‹</button>
+            <button class="nav-arrow right">›</button>
+            <img src="images/Pictureproject1.png" alt="Project 1" class="active" />
+            <img src="images/Pictureproject11.png" alt="Project 1 - 2" />
+          </div>
+          <div class="portfolio-content">
+            <span class="portfolio-category">Web Development</span>
+            <h3>E-commerce Website</h3>
+            <p>Vichar Kranti Books is a digital platform created to promote and sell Marathi-language literature, focusing on spiritual, self-help and philosophical titles.</p>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="portfolio-item" data-category="mobile">
+          <div class="portfolio-img">
+            <button class="nav-arrow left">‹</button>
+            <button class="nav-arrow right">›</button>
+            <img src="images/mobileApp1.png" alt="Mobile Project" class="active" />
+            <img src="images/mobileApp2.png" alt="Mobile Project 2" />
+          </div>
+          <div class="portfolio-content">
+            <span class="portfolio-category">Mobile Solutions</span>
+            <h3>Star Mould & Engineering – Industrial Mobile Companion App</h3>
+            <p>A mobile solution that streamlined client interactions, showcased product offerings and improved internal communication.</p>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="portfolio-item" data-category="design">
+          <div class="portfolio-img">
+            <button class="nav-arrow left">‹</button>
+            <button class="nav-arrow right">›</button>
+            <img src="images/Pictureproject3.png" alt="RBAC" class="active" />
+            <img src="images/Pictureproject32.png" alt="RBAC 2" />
+            <img src="images/Pictureproject33.png" alt="RBAC 3" />
+          </div>
+          <div class="portfolio-content">
+            <span class="portfolio-category">IAM Solutions</span>
+            <h3>Gentec – Embedding Accessibility</h3>
+            <p>An access flow system that positions accessibility as a core element in software engineering.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <img id="lightbox-img" src="" alt="Zoomed View" />
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-about">
+          <a href="index.html" class="footer-logo">NOVA SYNC</a>
+          <p>We create digital solutions that transform businesses and enhance user experiences. Our expert team delivers cutting-edge technology with personalized service.</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="portfolio.html">Our Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Our Services</h4>
+          <ul>
+            <li><a href="services.html">RBAC</a></li>
+            <li><a href="services.html">MFA</a></li>
+            <li><a href="services.html">IAM</a></li>
+            <li><a href="services.html">Web Development</a></li>
+            <li><a href="services.html">Cloud Solutions</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 NOVA SYNC. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      document.querySelectorAll('.portfolio-img').forEach(container => {
+        const imgs = container.querySelectorAll('img');
+        const leftBtn = container.querySelector('.left');
+        const rightBtn = container.querySelector('.right');
+        let current = 0;
+
+        const updateDisplay = () => {
+          imgs.forEach((img, i) => {
+            img.classList.toggle('active', i === current);
+          });
+        };
+
+        leftBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          current = (current - 1 + imgs.length) % imgs.length;
+          updateDisplay();
+        });
+
+        rightBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          current = (current + 1) % imgs.length;
+          updateDisplay();
+        });
+
+        imgs.forEach(img => {
+          img.addEventListener('click', () => {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            lightboxImg.src = img.src;
+            lightbox.classList.add('show');
+          });
+        });
+      });
+
+      document.getElementById('lightbox').addEventListener('click', () => {
+        document.getElementById('lightbox').classList.remove('show');
+      });
+    });
+  </script>
+  <script src="js/main.js"></script>
+</body>
+</html>

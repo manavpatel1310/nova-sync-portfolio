@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NOVA SYNC | About Us</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/png" href="images/Logo Design for Nova Sync - Celestial Theme.jpg">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo">NOVA SYNC</a>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="portfolio.html">Our Projects</a></li>
+                    <li><a href="testimonials.html">Testimonials</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-img">
+                    <img src="images/Logo Design for Nova Sync - Celestial Theme.jpg" alt="Our Team Working">
+                </div>  
+                <div class="about-text">
+                    <h2 class="section-title">About Us</h2>
+                    <p>Founded in 2015, NOVA SYNC has been at the forefront of digital transformation, helping businesses of all sizes harness the power of technology to achieve their goals.</p>
+                    <p>Our team of expert designers, developers, and strategists work collaboratively to deliver tailor-made solutions that address your unique challenges and opportunities.</p>
+                    
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">5+</div>
+                            <div class="stat-title">Projects Completed</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">4</div>
+                            <div class="stat-title">Team Members</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">10+</div>
+                            <div class="stat-title">Years Experience</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">98%</div>
+                            <div class="stat-title">Client Satisfaction</div>
+                        </div>
+                    </div>
+
+                    <!-- Team Members -->
+                    <h3>Meet Our Team</h3>
+                    <div id="team-members" class="team-grid"></div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-about">
+                    <a href="index.html" class="footer-logo">NOVA SYNC</a>
+                    <p>We create digital solutions that transform businesses and enhance user experiences. Our expert team delivers cutting-edge technology with personalized service.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="portfolio.html">Our Projects</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Our Services</h4>
+                    <ul>
+                        <li><a href="services.html">Role-Based Access Control (RBAC)</a></li>
+                        <li><a href="services.html">Multi-Factor Authentication (MFA)</a></li>
+                        <li><a href="services.html">Identity & Access Management (IAM)</a></li>
+                        <li><a href="services.html">Web Development</a></li>
+                        <li><a href="services.html">Cloud Solutions</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 NOVA SYNC. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Font Awesome -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js"></script>
+    
+    <!-- Team Members Script -->
+    <script>
+        const team = [
+            { name: "Manav Patel", role: "Lead Developer", img: "images/imageM.png" },
+            { name: "Parmod Shrestha", role: "Reaseacher/ Cloud Architect", img: "images/imageP.png" },
+            { name: "Prem Patel", role: "Project Manager/ Leader", img: "images/imagepp.png" },
+            { name: "Archit Parikh", role: "UI/UX Designer", img: "images/imageA.png" }
+        ];
+
+        const teamContainer = document.getElementById('team-members');
+
+        team.forEach(member => {
+            const div = document.createElement('div');
+            div.classList.add('team-member');
+            div.innerHTML = `
+                <img src="${member.img}" alt="${member.name}">
+                <h4>${member.name}</h4>
+                <p>${member.role}</p>
+            `;
+            teamContainer.appendChild(div);
+        });
+    </script>
+
+    
+</body>
+</html>
